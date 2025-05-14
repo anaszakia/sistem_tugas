@@ -34,8 +34,12 @@ class UserResource extends Resource
                     ->email()
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('no_wa')
+                    ->label('Nomor WhatsApp')
+                    ->required()
+                    ->maxLength(255)
+                    ->default('62'),
                 Forms\Components\DateTimePicker::make('email_verified_at'),
-
                 Forms\Components\TextInput::make('password')
                     ->password()
                     ->label(__('Password'))
@@ -72,6 +76,9 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('no_wa')
+                    ->label('Nomor WhatsApp')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('roles.name')
                     ->searchable(),

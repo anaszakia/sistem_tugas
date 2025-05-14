@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'fonte' => [
+        'token' => env('FONTE_API_TOKEN'),
+    ],
+
 ];

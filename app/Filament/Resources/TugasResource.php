@@ -2,17 +2,18 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\TugasResource\Pages;
-use App\Filament\Resources\TugasResource\RelationManagers;
-use App\Models\Tugas;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Tugas;
+use App\Helpers\FonteWa;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Resources\Resource;
 use Filament\Forms\Components\FileUpload;
+use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\TugasResource\Pages;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\TugasResource\RelationManagers;
 
 class TugasResource extends Resource
 {
@@ -39,7 +40,6 @@ class TugasResource extends Resource
                 Forms\Components\DateTimePicker::make('deadline')
                     ->required(),
                 Forms\Components\FileUpload::make('file')
-                    ->required()
                     ->image()
                     ->imagePreviewHeight('250')
                     ->disk('public') // WAJIB: agar URL cocok
@@ -121,5 +121,4 @@ class TugasResource extends Resource
     {
         return auth()->user()?->can('view_any_tugas');
     }
-
 }
