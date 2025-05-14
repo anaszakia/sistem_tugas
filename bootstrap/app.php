@@ -16,8 +16,4 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })
-    ->create()
-    ->singleton(
-        Schedule::class,
-        App\Schedule\ReminderTugasSchedule::class
-    );
+    ->create();
