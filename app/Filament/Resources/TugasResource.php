@@ -37,6 +37,8 @@ class TugasResource extends Resource
                 Forms\Components\TextInput::make('nama_tugas')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\RichEditor::make('deskripsi')
+                    ->maxLength(550),
                 Forms\Components\DateTimePicker::make('deadline')
                     ->required(),
                 Forms\Components\FileUpload::make('file')

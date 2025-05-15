@@ -14,6 +14,7 @@ class Tugas extends Model
     protected $fillable = [
         'id_user',
         'nama_tugas',
+        'deskripsi',
         'deadline',
         'file',
         'status',
